@@ -16,6 +16,7 @@
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
 
 
+
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"
@@ -23,9 +24,13 @@
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
     </bean>
 
+    <bean id="userJdbcDao" class="project.spring.mvc.dao.implementation.UserJdbcDao">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
     <mvc:annotation-driven />
 
     <mvc:resources mapping="/media/**" location="/resources/" />
 
-    <context:component-scan base-package="project.spring.mvc" />
+    <context:component-scan base-package="project.spring.mvc.controllers" />
 </beans>
