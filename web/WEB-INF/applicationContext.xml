@@ -11,9 +11,10 @@
 
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource"
-          p:driverClassName="org.mariadb.jdbc.Driver"
-          p:url="jdbc:mysql://localhost:3306/php_blog"
-          p:username="root"
-          p:password=""/>
+          p:driverClassName="org.postgresql.Driver"
+          p:url="jdbc:postgres://ec2-54-228-181-43.eu-west-1.compute.amazonaws.com:5432/df7i1rkkh8ucfm"
+          p:username="kvtffrtrevkgwu"
+          p:password="cc745eba9d823449fd3395bb0bf5b576d1be0b035702cce7b4f62f2d4b0849b7"
+          />
 
 </beans>
