@@ -1,5 +1,6 @@
 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,11 +13,19 @@
 </head>
 <body>
 <div class="container">
-    <jsp:include page="header.jsp"/>
+    <jsp:include page="../layout/header.jsp"/>
 
     <div class="container">
 
-        <jsp:include page="${body}.jsp" />
+        <sf:form method="post" action="/SpringMvcProject/user/login">
+            <label>Email</label>
+            <sf:input path="email"/><br>
+
+            <label>Password</label>
+            <sf:input path="password" type="password"/><br>
+
+            <button type="submit">Login</button>
+        </sf:form>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -25,6 +34,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    </div>
-    </body>
+</div>
+</body>
 </html>

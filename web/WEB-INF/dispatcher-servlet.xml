@@ -28,9 +28,20 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
+    <bean id="blogJdbcDao" class="project.spring.mvc.dao.implementation.BlogJdbcDao">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="postJdbcDao" class="project.spring.mvc.dao.implementation.PostJdbcDao">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+
     <mvc:annotation-driven />
 
     <mvc:resources mapping="/media/**" location="/resources/" />
 
     <context:component-scan base-package="project.spring.mvc.controllers" />
+
+
 </beans>
